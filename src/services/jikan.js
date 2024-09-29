@@ -1,16 +1,3 @@
-import axios from "axios";
-
-// Instância para buscar manga pelo ID
-const mangaApi = axios.create({ 
-    baseURL: "https://api.jikan.moe/v4/manga/"
-});
-
-// Instância para buscar anime pelo ID
-const animeApi = axios.create({ 
-    baseURL: "https://api.jikan.moe/v4/anime/" 
-});
-
-// Função para buscar manga pelo ID
 const getMangaById = async (id) => {
     try {
         const response = await fetch(`https://api.jikan.moe/v4/manga/${id}`);
