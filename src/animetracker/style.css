@@ -2,17 +2,21 @@
 .container {
     display: flex;
     flex-direction: column; /* Empilha elementos verticalmente */
-    align-items: center; /* Centraliza conteúdo horizontalmente */
+    align-items: flex-center; /* Centraliza conteúdo horizontalmente */
+    justify-content: flex-start;
     background-color: #2c2c2c; /* Fundo escuro para contraste */
     color: white; /* Cor do texto para visibilidade */
     min-height: 100vh; /* Garante que a altura mínima ocupe toda a tela */
+    padding: 0px; /* Adiciona um espaço em volta do container */
 }
 
 /* Styling for the input container */
 .containerInput {
     margin-bottom: 2%; /* Espaço entre o input e os resultados da pesquisa */
     display: flex;
-    gap: 10px; /* Espaço entre input e botão */
+    gap: 50px; /* Espaço entre input e botão */
+    border-radius: 10px;
+    margin-top: 30px;
 }
 
 /* Button search styling */
@@ -28,11 +32,12 @@
 
 .buttonSearch:hover {
     background-color: #0056b3; /* Cor do botão ao passar o mouse */
+    margin-right: 2%;
 }
 
 .type-selector {
     padding: 10px;
-    margin-right: 10px; /* Space between selector and input */
+    margin-right: 0%; /* Space between selector and input */
     background-color: #444; /* Match your theme */
     color: white; /* Text color */
     border: 1px solid #fff; /* Optional: border styling */
@@ -78,4 +83,61 @@
     color: white; /* Garante que o título seja visível em fundo escuro */
     font-size: 18px; /* Tamanho da fonte do título */
     margin: 5px 0; /* Margem acima e abaixo do título */
+}
+
+
+
+.modal {
+    display: flex; /* Usa flexbox para centralizar */
+    position: fixed; /* Fixa na tela */
+    z-index: 1; /* Fica acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro com opacidade */
+    justify-content: center; /* Centraliza o conteúdo */
+    align-items: center; /* Centraliza verticalmente */
+    visibility: hidden; /* Oculto por padrão */
+    opacity: 0; /* Opacidade 0 */
+    transition: visibility 0s, opacity 0.5s linear; /* Transição suave */
+}
+
+.modal.show {
+    visibility: visible; /* Torna visível */
+    opacity: 1; /* Torna opaco */
+}
+
+.modal-content {
+    background-color: #fefefe; /* Fundo da modal */
+    padding: 20px;
+    border-radius: 5px;
+    width: 100%; /* Largura da modal */
+    max-width: 800px; /* Largura máxima */
+    text-align: center; /* Centraliza o texto */
+    color: #000;
+}
+
+.modal-text {
+    display: flex;
+    flex-direction: column; /* Coloca os elementos em coluna */
+}
+
+.modal-content img {
+    width: 50%; /* Ajusta a imagem para ocupar toda a largura */
+    border-radius: 5px; /* Bordas arredondadas */
+    float: left;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Muda a cor ao passar o mouse */
 }
